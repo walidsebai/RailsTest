@@ -1,0 +1,12 @@
+<% @Users.each do |user| %>
+	<%= user.email %>
+	<br>
+	<%= user.username %>
+	<br>
+	<%= user.created_at %>
+<%end%>
+
+<% @Articles.each do |article| %>
+	<br>
+	<%= article.name %><%=link_to'edit',edit_article_path(article) ,method: :get%>
+<%end%>
