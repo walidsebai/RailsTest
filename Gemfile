@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'devise'
+gem 'bootstrap' 
 
 gem 'rails_admin', '~> 1.0'
 

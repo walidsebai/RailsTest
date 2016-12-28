@@ -7,7 +7,11 @@
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 		<body>
-			<%=render "index/TopMenu"%>
+			<%= render "layouts/TopMenu"%>
+			<br>
+			<% flash.each do |messg| %>
+				<div class="notice"><%= messg[1] %></div>
+			<%end%>
 			<%= yield %>
 		</body>
 </html>
