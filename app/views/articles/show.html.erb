@@ -14,6 +14,11 @@
   <strong>Pdate:</strong>
   <%= @article.pdate %>
 </p>
-
+<% if user_signed_in?%>
+<% if current_user==@article.user%>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+<%end%>
+<%= render "comments/form", art_id:@article.id%>
+<%end%>
+<%= render 'show', comments:@article.comments %>

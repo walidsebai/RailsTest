@@ -1,0 +1,9 @@
+<%if comments %>
+	<% comments.each do |comment|%>
+		<p>
+		<b><%= comment.user.username%></b><br>
+		<%= comment.content%>
+		<%=link_to "delete" , article_comment_path(@article,comment),method: :delete ,class:"close"%>
+		</p>
+	<%end%>
+<%end%>

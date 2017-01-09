@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Tuto</title>
-		<%= csrf_meta_tags %>
+<head>
+	<title>Tuto</title>
+	<%= csrf_meta_tags %>
 
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<body>
-			<%= render "layouts/TopMenu"%>
-			<br>
-			<% flash.each do |messg| %>
-				<div class="notice"><%= messg[1] %></div>
-			<%end%>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<body>
+		<%= render "layouts/TopMenu"%>
+		<br>
+		<div class="container">
 			<%= yield %>
-		</body>
-</html>
+		</div>
+	</body>
+	</html>

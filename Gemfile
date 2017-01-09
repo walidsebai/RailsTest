@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'devise'
 gem 'bootstrap' 
+gem 'sprockets-rails'
+gem 'cancancan'
 
 gem 'rails_admin', '~> 1.0'
 

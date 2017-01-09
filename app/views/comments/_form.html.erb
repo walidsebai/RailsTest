@@ -1,0 +1,7 @@
+<% n_comment=Comment.new%>
+<%=form_for(n_comment ,url:article_comments_path(@article)) do |f|  %>
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	<%= f.hidden_field :article_id,value:art_id %>
+	<%= f.submit "Create" %>
+<%end%>

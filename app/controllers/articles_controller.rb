@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 	before_action :set_article, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user! , only:[:new, :edit, :update, :destroy]
-	before_action :article_accesse ,only:[ :edit, :update, :destroy]
-
+	#before_action :article_accesse ,only:[ :edit, :update, :destroy]
+	authorize_resource
 	# GET /articles
 	# GET /articles.json
 	def index
@@ -12,11 +12,14 @@ class ArticlesController < ApplicationController
 	# GET /articles/1
 	# GET /articles/1.json
 	def show
+		#intialse controller
+
 	end
 
 	# GET /articles/new
 	def new
 		@article = Article.new
+		@article.user=current_user
 	end
 
 	# GET /articles/1/edit
@@ -27,9 +30,8 @@ class ArticlesController < ApplicationController
 	# POST /articles.json
 	def create
 		@article = Article.new(article_params)
-
 		respond_to do |format|
-			if @article.save  
+			if @article.save
 				format.html { redirect_to @article, notice: 'Article was successfully created.' }
 				format.json { render :show, status: :created, location: @article }
 			else
@@ -70,7 +72,7 @@ class ArticlesController < ApplicationController
 	end
 	def article_accesse
 		unless current_user== @article.user
-			flash[:pirate]="don't go snif unto other peaple"	
+			flash[:pirate]="don't go snif unto other peaple"
 			redirect_to profile_url()
 		end
 

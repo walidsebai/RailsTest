@@ -10,7 +10,7 @@ class IndexController < ActionController::Base
 		@user=user_session
 	end
 	def list
-		@articles=Article.where(user: current_user)
+		@articles=current_user.articles
 		render "articles/index"
 	end
 end
