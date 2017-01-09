@@ -1,4 +1,4 @@
-class IndexController < ActionController::Base
+class IndexController < ApplicationController
 	before_action :authenticate_user! , only: [:profile]
 	layout "application"
 	def index
