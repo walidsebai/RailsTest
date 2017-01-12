@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
 		@comment.user=current_user
 		respond_to do |format|
 			if @comment.save
-				format.html {redirect_to index_url , notice: 'comment writen'}
+				format.html {redirect_to article_path(@comment.article), notice: 'comment writen'}
 			else
-				format.html { redirect_to index_urt , notice: 'comment not writen'}
+				format.html { redirect_to index_url , notice: 'comment not writen'}
 			end
 		end
 	end
