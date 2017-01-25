@@ -4,13 +4,12 @@ class IndexController < ApplicationController
 	def index
 		@Users=User.all
 		@Articles=Article.all
-		@Routes=Rails.application.routes.routes
 	end
 	def profile
-		@user=user_session
+		@user=current_user
 	end
 	def list
-		@articles=current_user.articles
+		@articles=current_user.creations.all
 		render "articles/index"
 	end
 end

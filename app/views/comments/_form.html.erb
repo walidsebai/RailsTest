@@ -1,7 +1,7 @@
 <% n_comment=Comment.new%>
-<%=form_for(n_comment ,url:article_comments_path(@article)) do |f|  %>
+<%=form_for(n_comment ,url:article_comments_path(art_id)) do |f|  %>
 	<%= f.label :content %>
-	<%= f.text_area :content %>
+	<%= f.text_area :content ,required:'required'%>
 	<%= f.hidden_field :article_id,value:art_id %>
-	<%= f.submit "Create" %>
+	<%= f.submit "write" %>
 <%end%>

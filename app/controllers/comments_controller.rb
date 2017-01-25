@@ -3,10 +3,15 @@ class CommentsController < ApplicationController
 	authorize_resource
 	def new
 		@comment=Comment.new
+		@article_id=params[:article_id]
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 	def create
-		@comment=Comment.new(comment_params)
-		@comment.user=current_user
+		@comment=current_user.comments.new(comment_params)
+		#@comment.user=current_user
 		respond_to do |format|
 			if @comment.save
 				format.html {redirect_to article_path(@comment.article), notice: 'comment writen'}

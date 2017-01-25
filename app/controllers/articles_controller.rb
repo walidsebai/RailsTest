@@ -13,13 +13,11 @@ class ArticlesController < ApplicationController
 	# GET /articles/1.json
 	def show
 		#intialse controller
-
 	end
 
 	# GET /articles/new
 	def new
 		@article = Article.new
-		@article.user=current_user
 	end
 
 	# GET /articles/1/edit
@@ -29,10 +27,10 @@ class ArticlesController < ApplicationController
 	# POST /articles
 	# POST /articles.json
 	def create
-		@article = Article.new(article_params)
+		@article = current_user.creations.build(article_params)
 		respond_to do |format|
 			if @article.save
-				format.html { redirect_to @article, notice: 'Article was successfully created.' }
+				format.html { redirect_to articles_path, notice: 'Article was successfully created.' }
 				format.json { render :show, status: :created, location: @article }
 			else
 				format.html { render :new }
@@ -70,15 +68,6 @@ class ArticlesController < ApplicationController
 	def set_article
 		@article = Article.find(params[:id])
 	end
-	def article_accesse
-		unless current_user== @article.user
-			flash[:pirate]="don't go snif unto other peaple"
-			redirect_to profile_url()
-		end
-
-	end
-
-
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def article_params

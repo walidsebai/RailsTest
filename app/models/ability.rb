@@ -10,6 +10,7 @@ class Ability
 		#     can :read, :all
 		#   end
 		can :read ,Article 
+		can :create ,Article
 		can :manage, Article,{user_id:user.id}
 		can [:destroy],Comment,{user_id:user.id}
 		can [:create],Comment
