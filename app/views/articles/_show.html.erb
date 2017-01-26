@@ -1,9 +1,14 @@
-<%if comments %>
-	<% comments.each do |comment|%>
-		<p>
-		<b><%= comment.user.username%></b><br>
-		<%= comment.content%>
-		<%=link_to "delete" , article_comment_path(@article,comment),method: :delete ,class:"close"%>
-		</p>
-	<%end%>
+<% articles.sort_by{|h| h[:pdate]}.each do |article|%>
+	<div class="col-md-4">
+		<div class="card" style="width: 20rem;">
+			<img class="card-img-top" src="..." alt="Card image cap">
+			<div class="card-block">
+				<h4 class="card-title"><%= article.name%></h4>
+				<h6 class="card-subtitle text-muted">by <%=article.user.username%></h6>
+				<p class="card-text"><%= article.contenu%></p>
+				<%= link_to "show", article,class:"card-link"%>
+			</div>
+		</div>
+
+	</div>
 <%end%>

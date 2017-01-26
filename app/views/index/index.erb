@@ -2,8 +2,6 @@
 <% @Users.each do |user| %>
 	<%= user.email %>
 <%end%>
-
-<% @Articles.each do |article| %>
-	<br>
-	<%= article.name %><%=link_to'show',article_path(article) ,method: :get%>
-<%end%>
+<div class="row pricing">
+<%= display_articles(@Articles)%>
+</div>

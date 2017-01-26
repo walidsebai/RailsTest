@@ -23,5 +23,5 @@
 	<div id="modal-window" class="modal hidden fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 	<% render "comments/form", art_id:@article.id%>
 <%end%>
-<%= render 'show', comments:@article.comments %>
+<%= render 'comments/show', comments:@article.comments %>
 
