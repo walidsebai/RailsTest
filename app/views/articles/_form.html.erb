@@ -20,7 +20,10 @@
     <%= f.label :contenu %>
     <%= f.text_area :contenu %>
   </div>
-
+  <div class="field">
+    <%= f.label :image%>
+    <%= f.file_field :image %>
+    </div>
   <div class="field">
     <%= f.label :pdate %>
     <%= f.datetime_select :pdate %>

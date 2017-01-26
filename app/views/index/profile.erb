@@ -1,9 +1,3 @@
 <%= javascript_include_tag :all %>
-<%#<% current_user.creations.sort_by{|h| h[:pdate]}.each do |article|%>%>
-<%#<p><%=article.name%></p>%>
-<%#<p><%=article.pdate%></p>%>
-<%#<p><%= link_to 'Show', article %></p>   %>
-<%#<%end%>	%>
 <%= display_articles(current_user.creations)%>
-<%= button_to('Logout', destroy_user_session_path, :method => 'delete') %>
 
