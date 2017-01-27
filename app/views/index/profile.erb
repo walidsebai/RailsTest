@@ -1,3 +1,5 @@
 <%= javascript_include_tag :all %>
+<%= image_tag current_user.picture_url(:profile)%>
+<%= image_tag current_user.picture_url(:thumb) ,class:""  %>
 <%= display_articles(current_user.creations)%>
 

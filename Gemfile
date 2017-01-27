@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem "mini_magick"
 gem 'carrierwave', '~> 1.0'
 gem 'devise'
-gem 'bootstrap' 
+gem 'bootstrap','4.0.0.alpha5' 
 gem 'sprockets-rails'
 gem 'cancancan'
 

@@ -1,4 +1,4 @@
-<% articles.sort_by{|h| h[:pdate]}.each do |article|%>
+<% krifa.sort_by{|h| h[:pdate]}.each do |article|%>
 	<div class="col-md-4">
 		<div class="card" style="width: 20rem;">
 			<%= image_tag(article.image_url(:thumb),class:"card-img-top",size: "318x200" ) if(article.image?)%>
@@ -6,7 +6,7 @@
 				<h4 class="card-title"><%= article.name%></h4>
 				<h6 class="card-subtitle text-muted">by <%=article.user.username%></h6>
 				<p class="card-text"><%= article.contenu%></p>
-				<%= link_to "show", article,class:"card-link"%>
+				<%= link_to "show", article, class:"card-link"%>
 			</div>
 		</div>
 

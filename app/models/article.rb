@@ -6,10 +6,10 @@ class Article < ApplicationRecord
 
 	has_many :comments
 	has_many :users, through: :comments , dependent: :destroy
-	after_save:user_save
+	after_save :user_save
 	private
 	def user_save
-		writer=User.find(self.user_id)
+		p "****************************"
 		#writer.articles<<self
 	end
 end
