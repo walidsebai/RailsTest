@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 	authorize_resource
 	# GET /articles
 	# GET /articles.json
-	def index
+	def index 
 		@articles = Article.all
 	end
 
